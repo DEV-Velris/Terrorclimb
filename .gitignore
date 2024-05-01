@@ -73,3 +73,6 @@ crashlytics-build.properties
 
 # JetBrains Rider
 .idea/
+
+# Meta files
+*.meta
