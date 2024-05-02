@@ -179,6 +179,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""View"",
+                    ""type"": ""Value"",
+                    ""id"": ""bcf41973-7a8f-4ed3-847e-fda40389d4ef"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -412,6 +421,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""656af26c-20d3-4ee7-b65d-41980e4b8a49"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""View"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -437,6 +457,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_InGame_Interact = m_InGame.FindAction("Interact", throwIfNotFound: true);
         m_InGame_Menu = m_InGame.FindAction("Menu", throwIfNotFound: true);
         m_InGame_Inventory = m_InGame.FindAction("Inventory", throwIfNotFound: true);
+        m_InGame_View = m_InGame.FindAction("View", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -515,6 +536,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Interact;
     private readonly InputAction m_InGame_Menu;
     private readonly InputAction m_InGame_Inventory;
+    private readonly InputAction m_InGame_View;
     public struct InGameActions
     {
         private @Controls m_Wrapper;
@@ -536,6 +558,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_InGame_Interact;
         public InputAction @Menu => m_Wrapper.m_InGame_Menu;
         public InputAction @Inventory => m_Wrapper.m_InGame_Inventory;
+        public InputAction @View => m_Wrapper.m_InGame_View;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -596,6 +619,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
+            @View.started += instance.OnView;
+            @View.performed += instance.OnView;
+            @View.canceled += instance.OnView;
         }
 
         private void UnregisterCallbacks(IInGameActions instance)
@@ -651,6 +677,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
+            @View.started -= instance.OnView;
+            @View.performed -= instance.OnView;
+            @View.canceled -= instance.OnView;
         }
 
         public void RemoveCallbacks(IInGameActions instance)
@@ -687,5 +716,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnView(InputAction.CallbackContext context);
     }
 }

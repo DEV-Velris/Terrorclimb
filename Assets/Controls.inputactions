@@ -157,6 +157,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "View",
+                    "type": "Value",
+                    "id": "bcf41973-7a8f-4ed3-847e-fda40389d4ef",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -388,6 +397,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "656af26c-20d3-4ee7-b65d-41980e4b8a49",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "View",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
