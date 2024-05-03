@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     
     // Camera
     [SerializeField] private Transform cameraTransform;
-    [Range(0.1f, 1f)] [SerializeField] private float xSensitivity = 0.1f;
-    [Range(0.1f, 1f)] [SerializeField] private float ySensitivity = 0.1f;
+    [Range(0.1f, 1f)] [SerializeField] private float xSensitivity = 0.3f;
+    [Range(0.1f, 1f)] [SerializeField] private float ySensitivity = 0.3f;
     [Range(0f, 90f)] [SerializeField] private float cameraRotationLimit = 80f;
     private Vector2 _cameraRotation = Vector2.zero;
 
