@@ -91,18 +91,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""SwitchUp"",
+                    ""name"": ""Switch"",
                     ""type"": ""Value"",
                     ""id"": ""1659b7a1-af5f-4c4d-8996-4a326d8465c3"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""SwitchDown"",
-                    ""type"": ""Value"",
-                    ""id"": ""65a68ef5-1384-4b31-a8d6-ec733f498aad"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -313,26 +304,37 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""61e941d0-5644-4a04-9e0e-960b85f9142f"",
-                    ""path"": ""<Mouse>/scroll/up"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""d8ddab6e-30f8-4499-bc38-fa238c05a049"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchUp"",
-                    ""isComposite"": false,
+                    ""action"": ""Switch"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""53849760-5c8b-4d4d-b631-e43ba83e9aa8"",
+                    ""name"": ""negative"",
+                    ""id"": ""56f07a19-c083-4bd1-b83b-e350891a6e6f"",
                     ""path"": ""<Mouse>/scroll/down"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SwitchDown"",
+                    ""action"": ""Switch"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""ca38253e-62cf-48ee-b794-92799c58236c"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -447,8 +449,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_InGame_Scope = m_InGame.FindAction("Scope", throwIfNotFound: true);
         m_InGame_Fire = m_InGame.FindAction("Fire", throwIfNotFound: true);
         m_InGame_Reload = m_InGame.FindAction("Reload", throwIfNotFound: true);
-        m_InGame_SwitchUp = m_InGame.FindAction("SwitchUp", throwIfNotFound: true);
-        m_InGame_SwitchDown = m_InGame.FindAction("SwitchDown", throwIfNotFound: true);
+        m_InGame_Switch = m_InGame.FindAction("Switch", throwIfNotFound: true);
         m_InGame_FirstWeapon = m_InGame.FindAction("FirstWeapon", throwIfNotFound: true);
         m_InGame_SecondaryWeapon = m_InGame.FindAction("SecondaryWeapon", throwIfNotFound: true);
         m_InGame_ThirdWeapon = m_InGame.FindAction("ThirdWeapon", throwIfNotFound: true);
@@ -526,8 +527,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_Scope;
     private readonly InputAction m_InGame_Fire;
     private readonly InputAction m_InGame_Reload;
-    private readonly InputAction m_InGame_SwitchUp;
-    private readonly InputAction m_InGame_SwitchDown;
+    private readonly InputAction m_InGame_Switch;
     private readonly InputAction m_InGame_FirstWeapon;
     private readonly InputAction m_InGame_SecondaryWeapon;
     private readonly InputAction m_InGame_ThirdWeapon;
@@ -548,8 +548,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Scope => m_Wrapper.m_InGame_Scope;
         public InputAction @Fire => m_Wrapper.m_InGame_Fire;
         public InputAction @Reload => m_Wrapper.m_InGame_Reload;
-        public InputAction @SwitchUp => m_Wrapper.m_InGame_SwitchUp;
-        public InputAction @SwitchDown => m_Wrapper.m_InGame_SwitchDown;
+        public InputAction @Switch => m_Wrapper.m_InGame_Switch;
         public InputAction @FirstWeapon => m_Wrapper.m_InGame_FirstWeapon;
         public InputAction @SecondaryWeapon => m_Wrapper.m_InGame_SecondaryWeapon;
         public InputAction @ThirdWeapon => m_Wrapper.m_InGame_ThirdWeapon;
@@ -589,12 +588,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Reload.started += instance.OnReload;
             @Reload.performed += instance.OnReload;
             @Reload.canceled += instance.OnReload;
-            @SwitchUp.started += instance.OnSwitchUp;
-            @SwitchUp.performed += instance.OnSwitchUp;
-            @SwitchUp.canceled += instance.OnSwitchUp;
-            @SwitchDown.started += instance.OnSwitchDown;
-            @SwitchDown.performed += instance.OnSwitchDown;
-            @SwitchDown.canceled += instance.OnSwitchDown;
+            @Switch.started += instance.OnSwitch;
+            @Switch.performed += instance.OnSwitch;
+            @Switch.canceled += instance.OnSwitch;
             @FirstWeapon.started += instance.OnFirstWeapon;
             @FirstWeapon.performed += instance.OnFirstWeapon;
             @FirstWeapon.canceled += instance.OnFirstWeapon;
@@ -647,12 +643,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Reload.started -= instance.OnReload;
             @Reload.performed -= instance.OnReload;
             @Reload.canceled -= instance.OnReload;
-            @SwitchUp.started -= instance.OnSwitchUp;
-            @SwitchUp.performed -= instance.OnSwitchUp;
-            @SwitchUp.canceled -= instance.OnSwitchUp;
-            @SwitchDown.started -= instance.OnSwitchDown;
-            @SwitchDown.performed -= instance.OnSwitchDown;
-            @SwitchDown.canceled -= instance.OnSwitchDown;
+            @Switch.started -= instance.OnSwitch;
+            @Switch.performed -= instance.OnSwitch;
+            @Switch.canceled -= instance.OnSwitch;
             @FirstWeapon.started -= instance.OnFirstWeapon;
             @FirstWeapon.performed -= instance.OnFirstWeapon;
             @FirstWeapon.canceled -= instance.OnFirstWeapon;
@@ -706,8 +699,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnScope(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
-        void OnSwitchUp(InputAction.CallbackContext context);
-        void OnSwitchDown(InputAction.CallbackContext context);
+        void OnSwitch(InputAction.CallbackContext context);
         void OnFirstWeapon(InputAction.CallbackContext context);
         void OnSecondaryWeapon(InputAction.CallbackContext context);
         void OnThirdWeapon(InputAction.CallbackContext context);

@@ -4,7 +4,7 @@ public class Main : MonoBehaviour
 {
     public void StartGame()
     {
-        // UnityEngine.SceneManagement.SceneManager.LoadScene("Test Movements");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Test Movements");
     }
 
     public void Options()
