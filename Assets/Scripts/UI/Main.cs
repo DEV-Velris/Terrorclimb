@@ -1,15 +1,16 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Main : MonoBehaviour
 {
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Test Movements");
+        SceneManager.LoadScene("Test Movements");
     }
 
     public void Options()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Options");
+        SceneManager.LoadScene("Options");
     }
 
     public void ExitGame()

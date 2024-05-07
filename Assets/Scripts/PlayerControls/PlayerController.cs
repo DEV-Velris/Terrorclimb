@@ -105,4 +105,5 @@ public class PlayerController : MonoBehaviour
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
+    
 }

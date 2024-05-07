@@ -154,7 +154,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Menu"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""7c268de9-6720-4c71-a88a-121e1e1e8677"",
                     ""expectedControlType"": ""Button"",
@@ -409,7 +409,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Menu"",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -456,7 +456,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_InGame_FourthWeapon = m_InGame.FindAction("FourthWeapon", throwIfNotFound: true);
         m_InGame_SpecialEquipment = m_InGame.FindAction("SpecialEquipment", throwIfNotFound: true);
         m_InGame_Interact = m_InGame.FindAction("Interact", throwIfNotFound: true);
-        m_InGame_Menu = m_InGame.FindAction("Menu", throwIfNotFound: true);
+        m_InGame_Pause = m_InGame.FindAction("Pause", throwIfNotFound: true);
         m_InGame_Inventory = m_InGame.FindAction("Inventory", throwIfNotFound: true);
         m_InGame_View = m_InGame.FindAction("View", throwIfNotFound: true);
     }
@@ -534,7 +534,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_InGame_FourthWeapon;
     private readonly InputAction m_InGame_SpecialEquipment;
     private readonly InputAction m_InGame_Interact;
-    private readonly InputAction m_InGame_Menu;
+    private readonly InputAction m_InGame_Pause;
     private readonly InputAction m_InGame_Inventory;
     private readonly InputAction m_InGame_View;
     public struct InGameActions
@@ -555,7 +555,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @FourthWeapon => m_Wrapper.m_InGame_FourthWeapon;
         public InputAction @SpecialEquipment => m_Wrapper.m_InGame_SpecialEquipment;
         public InputAction @Interact => m_Wrapper.m_InGame_Interact;
-        public InputAction @Menu => m_Wrapper.m_InGame_Menu;
+        public InputAction @Pause => m_Wrapper.m_InGame_Pause;
         public InputAction @Inventory => m_Wrapper.m_InGame_Inventory;
         public InputAction @View => m_Wrapper.m_InGame_View;
         public InputActionMap Get() { return m_Wrapper.m_InGame; }
@@ -609,9 +609,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @Menu.started += instance.OnMenu;
-            @Menu.performed += instance.OnMenu;
-            @Menu.canceled += instance.OnMenu;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
@@ -664,9 +664,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @Menu.started -= instance.OnMenu;
-            @Menu.performed -= instance.OnMenu;
-            @Menu.canceled -= instance.OnMenu;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
@@ -706,7 +706,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnFourthWeapon(InputAction.CallbackContext context);
         void OnSpecialEquipment(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
-        void OnMenu(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnView(InputAction.CallbackContext context);
     }
