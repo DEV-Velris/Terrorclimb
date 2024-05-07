@@ -34,6 +34,12 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         
         _controlMap = new Controls();
+        
+        var rebinds = PlayerPrefs.GetString("keybindings");
+        if (!string.IsNullOrEmpty(rebinds))
+        {
+            _controlMap.LoadBindingOverridesFromJson(rebinds);
+        }
 
         Cursor.lockState = CursorLockMode.Locked;
         

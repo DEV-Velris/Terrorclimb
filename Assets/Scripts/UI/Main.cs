@@ -4,12 +4,12 @@ public class Main : MonoBehaviour
 {
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Test Movements");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Test Movements");
     }
 
     public void Options()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Options");
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Options");
     }
 
     public void ExitGame()
