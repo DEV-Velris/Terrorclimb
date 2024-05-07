@@ -248,7 +248,18 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             }
             else
             {
-                PerformInteractiveRebind(action, bindingIndex);
+                // Cancel if echap is pressed
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    m_RebindOperation?.Cancel();
+                    m_RebindOperation = null;
+                    m_RebindOverlay?.SetActive(false);
+                    UpdateBindingDisplay();
+                }
+                else
+                {
+                    PerformInteractiveRebind(action, bindingIndex);
+                }
             }
         }
 
