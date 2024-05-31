@@ -26,7 +26,6 @@ public class Gun : MonoBehaviour
             {
                 OnShoot.Invoke();
                 CurrentCooldown = FireCooldown;
-                Debug.Log("Fire");
             }
         }
         CurrentCooldown -= Time.deltaTime;
