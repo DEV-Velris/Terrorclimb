@@ -22,10 +22,14 @@ public class Gun : MonoBehaviour
     {
         if (_controlMap.InGame.Fire.IsPressed())
         {
-            if (CurrentCooldown <= 0f)
+            if (GameManager.gameManager.Ammos > 0)
             {
-                OnShoot.Invoke();
-                CurrentCooldown = FireCooldown;
+                if (CurrentCooldown <= 0f)
+                {
+                    OnShoot.Invoke();
+                    GameManager.gameManager.Ammos -= 1;
+                    CurrentCooldown = FireCooldown;
+                }
             }
         }
         CurrentCooldown -= Time.deltaTime;

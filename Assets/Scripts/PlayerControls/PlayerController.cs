@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         // Création des abonnements
         _controlMap.InGame.Enable();
         _controlMap.InGame.Jump.performed += OnJump;
+        _controlMap.InGame.Reload.performed += OnReload;
     }
 
     private void Update()
@@ -103,6 +104,14 @@ public class PlayerController : MonoBehaviour
         if (_isGrounded)
         {
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    private void OnReload(InputAction.CallbackContext ctx)
+    {
+        if (GameManager.gameManager.Ammos < 30)
+        {
+            GameManager.gameManager.Ammos = 30;
         }
     }
     

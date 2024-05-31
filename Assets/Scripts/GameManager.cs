@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public UnitArmor PlayerArmor = new(100, 100);
 
     public int Score;
+    public int Ammos = 30;
 
     private void Awake()
     {
