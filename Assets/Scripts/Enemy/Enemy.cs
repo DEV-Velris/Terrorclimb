@@ -18,6 +18,14 @@ public class Enemy : MonoBehaviour
             _health = value;
             if (_health <= 0f)
             {
+                if (GameManager.gameManager.PlayerHealth.CurrentHealth < 100)
+                {
+                    GameManager.gameManager.PlayerHealth.HealUnit(10);
+                }
+                else
+                {
+                    GameManager.gameManager.PlayerArmor.HealArmorUnit(5);
+                }
                 Destroy(gameObject);
             }
         }

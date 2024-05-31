@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,15 @@ public class GameManager : MonoBehaviour
         else
         {
             gameManager = this;
+        }
+    }
+
+    private void Update()
+    {
+        if (PlayerHealth.CurrentHealth <= 0)
+        {
+            SceneManager.LoadScene("Main menu");
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

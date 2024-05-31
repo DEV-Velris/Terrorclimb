@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,11 @@ public class ArmorBar : MonoBehaviour
     private void Start()
     {
         _armorBar = GetComponent<Slider>();
+    }
+
+    private void Update()
+    {
+        SetArmor(GameManager.gameManager.PlayerArmor.CurrentArmor);
     }
 
     public void SetMaxArmor(int maxHealth)
