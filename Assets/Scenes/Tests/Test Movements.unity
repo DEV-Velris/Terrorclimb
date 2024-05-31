@@ -334,7 +334,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50d6f327d54dc481a73394db54ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 10
+  StartingHealth: 300
 --- !u!136 &204211324
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ Transform:
   m_GameObject: {fileID: 204211320}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.21, y: 1, z: 15.97}
+  m_LocalPosition: {x: 20.67, y: 1, z: 22.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -506,7 +506,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50d6f327d54dc481a73394db54ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 10
+  StartingHealth: 600
 --- !u!136 &324882707
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ Transform:
   m_GameObject: {fileID: 324882703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.21, y: 1, z: 7.349}
+  m_LocalPosition: {x: 28.95, y: 1, z: 18.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1142,7 +1142,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1166,7 +1166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50d6f327d54dc481a73394db54ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 10
+  StartingHealth: 200
 --- !u!136 &964672267
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1249,7 +1249,7 @@ Transform:
   m_GameObject: {fileID: 964672263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.85, y: 1, z: 11.43}
+  m_LocalPosition: {x: 23.66, y: 1, z: 27.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1446,7 +1446,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1553,7 +1553,7 @@ Transform:
   m_GameObject: {fileID: 1221536229}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.52, y: 1, z: 15.97}
+  m_LocalPosition: {x: 4.980001, y: 1, z: 27.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1881,7 +1881,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1905,7 +1905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50d6f327d54dc481a73394db54ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 10
+  StartingHealth: 30
 --- !u!136 &1555593932
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1988,7 +1988,7 @@ Transform:
   m_GameObject: {fileID: 1555593928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.04, y: 1, z: 1.71}
+  m_LocalPosition: {x: 21.73, y: 1, z: 9.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2213,7 +2213,7 @@ Transform:
   m_GameObject: {fileID: 1746539696}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.35, y: 1, z: 12.99}
+  m_LocalPosition: {x: 11.35, y: 1, z: 23.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2229,7 +2229,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2427,6 +2427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ca95fe168247b41a60343e9522065d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: 0
 --- !u!4 &2076419420
 Transform:
   m_ObjectHideFlags: 0
@@ -2501,7 +2502,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2525,7 +2526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc50d6f327d54dc481a73394db54ebbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 10
+  StartingHealth: 5
 --- !u!136 &2097891588
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2608,7 +2609,7 @@ Transform:
   m_GameObject: {fileID: 2097891584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.52, y: 1, z: 1.71}
+  m_LocalPosition: {x: 2.07, y: 1, z: 15.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2705,6 +2706,11 @@ PrefabInstance:
     - target: {fileID: 1874987255016058579, guid: 9aebcdbdfbd7d934fbeef12b492a3f5b,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2271886978845564870, guid: 9aebcdbdfbd7d934fbeef12b492a3f5b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3099763981889929349, guid: 9aebcdbdfbd7d934fbeef12b492a3f5b,

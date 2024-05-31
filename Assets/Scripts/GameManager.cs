@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     
     public UnitHealth PlayerHealth = new(100, 100);
     public UnitArmor PlayerArmor = new(100, 100);
+
+    public int Score;
 
     private void Awake()
     {
@@ -25,6 +28,12 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (PlayerHealth.CurrentHealth <= 0)
+        {
+            SceneManager.LoadScene("Main menu");
+            Cursor.lockState = CursorLockMode.None;
+        }
+
+        if (Score == 7)
         {
             SceneManager.LoadScene("Main menu");
             Cursor.lockState = CursorLockMode.None;

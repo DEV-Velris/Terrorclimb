@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
                 {
                     GameManager.gameManager.PlayerArmor.HealArmorUnit(5);
                 }
+
+                GameManager.gameManager.Score += 1;
                 Destroy(gameObject);
             }
         }
